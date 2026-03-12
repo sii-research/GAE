@@ -67,7 +67,7 @@ We use [LightningDiT](https://github.com/hustvl/LightningDiT) for the DiT implem
 
 ### 1. Installation
 ```bash
-git clone https://github.com/freezing-index/Geometric-Autoencoder-for-Diffusion-Models.git
+git clone https://github.com/sii-research/GAE.git
 cd GAE
 conda create -n gae python=3.10.12
 conda activate gae
