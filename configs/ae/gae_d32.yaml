@@ -1,0 +1,70 @@
+ckpt_path: ./checkpoints/d32/gae_d32_inference.ckpt
+model:
+  base_learning_rate: 1.0e-05
+  target: tokenizer.gae.FoundationEncoderModel
+  params:
+    stage: "stage1" 
+    learning_rate: 1.0e-05
+    semantic_loss_weight: 1.0
+    lr_g_factor: 20
+    sigma_std: 0.2
+    use_sigma_vae: true
+    latent_dim: 32
+    encoder_channels: 1024
+    use_norm: true
+    use_vf_loss: false
+    use_adaptive_sp_weight: false
+    align_type: "mid"
+    weight_decay: 0.05
+    encoder_config:
+      target: tokenizer.utils.decoder.ViTEncoder 
+      params:
+        img_size: 256        
+        patch_size: 16      
+        in_ch: 3             
+        out_ch: 1024         
+        
+        embed_dim: 1024      
+        num_layers: 24       
+        num_heads: 16        
+        mlp_ratio: 4.0
+        dropout: 0.0
+        
+    adapter_config:
+      target: tokenizer.utils.encoder.adapter.Adapter
+      params:
+        in_channels: 1024   
+        out_channels: 32 
+
+    ddconfig:
+      input_resolution: 16
+      out_ch: 3
+      resolution: 256
+      z_channels: 32
+      give_pre_end: false
+      tanh_out: false
+      double_z: false      
+      embed_dim: 1024      
+      num_layers: 24       
+      num_heads: 16        
+      mlp_ratio: 4.0
+      dropout: 0.0
+
+    lossconfig:
+      target: tokenizer.utils.loss.contperceptual.LPIPSWithDiscriminator
+      params:
+        disc_start: 5001 
+        kl_weight: 0.0       
+        disc_weight: 0.5
+        perceptual_weight: 1.0
+
+        semantic_loss_weight: 1.0  
+        use_vf_loss: false
+        use_adaptive_sp_weight: false
+       
+        vf_cos_margin: 0
+        vf_distmat_margin: 0
+        vf_cos_weight: 0
+        vf_distmat_weight: 0
+
+

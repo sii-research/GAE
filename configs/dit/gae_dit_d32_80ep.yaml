@@ -1,0 +1,79 @@
+
+ckpt_path:
+data:
+  raw_image_path: 
+  data_path: 
+  fid_reference_file: 
+  image_size: 256
+  num_classes: 1000
+  num_workers: 16
+  latent_norm: True           
+  latent_multiplier: 1.0      
+
+
+vae:
+  model_name: "gae_d32"
+  hf_model_path: ./checkpoints/d32/gae_d32_inference.ckpt
+  per_proc_batch_size: 20
+  normalize_type: "normalize_type"
+  downsample_ratio: 16
+  latent_dim: 32
+
+model:
+  in_chans: 32
+  model_type: LightningDiT-XL/1
+  use_qknorm: false
+  use_rmsnorm: true
+  use_rope: true
+  use_swiglu: true
+  wo_shift: false
+optimizer:
+  beta2: 0.95
+  lr: 0.0002
+# sample:
+#   atol: 1.0e-06
+#   cfg_interval_start: 0.0
+#   cfg_scale: 1.0
+#   fid_num: 50000
+#   likelihood: false
+#   mode: ODE
+#   num_sampling_steps: 250
+#   per_proc_batch_size: 4
+#   reverse: false
+#   rtol: 0.001
+#   sampling_method: euler
+#   timestep_shift: 0.7
+sample:
+  atol: 1.0e-06
+  cfg_interval_start: 0.0
+  cfg_scale: 1.0
+  fid_num: 50000
+  likelihood: false
+  mode: SDE
+  num_sampling_steps: 250
+  per_proc_batch_size: 4
+  reverse: false
+  rtol: 0.001
+  sampling_method: Euler
+  timestep_shift: 0.4
+  last_step_size: 0.004
+  last_step: Mean
+train:
+  ckpt: null
+  ckpt_every: 20000
+  exp_name: gae_d32
+  global_batch_size: 1024
+  global_seed: 0
+  log_every: 100
+  max_steps: 100000
+  output_dir: ./output/gae/dit_80ep
+  resume: false
+transport:
+  loss_weight: null
+  path_type: Linear
+  prediction: velocity
+  sample_eps: null
+  train_eps: null
+  use_cosine_loss: true
+  use_lognorm: true
+  train_timestep_shift: 0.7
