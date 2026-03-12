@@ -12,8 +12,8 @@ Latent diffusion models have established a new state-of-the-art in high-resoluti
 ---
 
 ## 📢 News
-* **[2026.03.10]**: Core code released! Includes DiT training and inference based on GAE latent space.
-* **[2026.03.10]**: Pre-trained weights for GAE-AE and DiT are available on [Hugging Face](https://huggingface.co/sii-research/gae-imagenet256-f16d32/tree/main).
+* **[2026.03.12]**: Core code released! Includes DiT training and inference based on GAE latent space.
+* **[2026.03.12]**: Pre-trained weights for GAE-AE and DiT are available on [Hugging Face](https://huggingface.co/sii-research/gae-imagenet256-f16d32/tree/main).
 
 ---
 
