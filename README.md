@@ -1,5 +1,5 @@
 # Geometric Autoencoder for Diffusion Models (GAE) 
-[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models-yellow)](https://huggingface.co/GK50/GAE-Checkpoints/tree/main)
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models-yellow)](https://huggingface.co/sii-research/gae-imagenet256-f16d32/tree/main)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Paper](https://img.shields.io/badge/Paper-PDF-red)](http://arxiv.org/abs/2603.10365)
 
@@ -13,7 +13,7 @@ Latent diffusion models have established a new state-of-the-art in high-resoluti
 
 ## 📢 News
 * **[2026.03.10]**: Core code released! Includes DiT training and inference based on GAE latent space.
-* **[2026.03.10]**: Pre-trained weights for GAE-AE and DiT are available on [Hugging Face](https://huggingface.co/GK50/GAE-Checkpoints/tree/main).
+* **[2026.03.10]**: Pre-trained weights for GAE-AE and DiT are available on [Hugging Face](https://huggingface.co/sii-research/gae-imagenet256-f16d32/tree/main).
 
 ---
 
@@ -50,14 +50,14 @@ Some pre-trained weights are hosted on Hugging Face.
 
 | Model | Epochs | Latent Dim | gFID (w/o) | Weights |
 | :--- | :---: | :---: | :---: | :---: |
-| **GAE-LightningDiT-XL** | 80 | 32 | 1.82 | [🔗 HF Link](https://huggingface.co/GK50/GAE-Checkpoints/tree/main/checkpoints/d32) |
-| **GAE-LightningDiT-XL** | 800 | 32 | 1.31 | [🔗 HF Link](https://huggingface.co/GK50/GAE-Checkpoints/tree/main/checkpoints/d32) |
+| **GAE-LightningDiT-XL** | 80 | 32 | 1.82 | [🔗 HF Link](https://huggingface.co/sii-research/gae-imagenet256-f16d32/tree/main/d32) |
+| **GAE-LightningDiT-XL** | 800 | 32 | 1.31 | [🔗 HF Link](https://huggingface.co/sii-research/gae-imagenet256-f16d32/tree/main/d32) |
 
 ---
 
 | Model | Epochs | Latent Dim | Weights |
 | :--- | :---: | :---: | :---: |
-| **GAE** | 200 | 32  | [🔗 HF Link](https://huggingface.co/GK50/GAE-Checkpoints/tree/main/checkpoints/d32) |
+| **GAE** | 200 | 32  | [🔗 HF Link](https://huggingface.co/sii-research/gae-imagenet256-f16d32/tree/main/d32) |
 
 ---
 
@@ -108,10 +108,13 @@ We express our sincere gratitude to the authors for their valuable contributions
 ## 📝 Citation
 If you find this work useful, please consider citing:
 ```bibtex
-@article{liu2025geometric,
-  title={Geometric Autoencoder for Diffusion Models},
-  author={Liu, Hangyu and Wang, Jianyong and Sun, Yutao},
-  journal={arXiv preprint arXiv:2603.10365},
-  year={2025}
+@misc{liu2026geometricautoencoderdiffusionmodels,
+      title={Geometric Autoencoder for Diffusion Models}, 
+      author={Hangyu Liu and Jianyong Wang and Yutao Sun},
+      year={2026},
+      eprint={2603.10365},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2603.10365}, 
 }
 ```
